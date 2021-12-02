@@ -56,50 +56,50 @@ class Main_window(QtWidgets.QMainWindow):
         self.show()
 
     def zapros_1(self):
-        with connections.Connection(user='root',host='localhost',database='gibdd') as bd:
+        with connections.Connection(user='root',password='root',host='localhost',database='gibdd') as bd:
             with cursors.Cursor(bd) as cursor:
 
-                sql = ('SELECT `Код_сотрудника`, `Код_звания`, `ФИО` FROM `сотрудники`')
+                sql = ('SELECT `Код сотрудника`, `Код звания`, `ФИО` FROM `сотрудники`')
                 cursor.execute(sql)
                 g = cursor.fetchall()
                 print(g)
                 self.info_1.setText(str(g))
 
     def zapros_2(self):
-        with connections.Connection(user='root',host='localhost',database='gibdd') as bd:
+        with connections.Connection(user='root',password='root',host='localhost',database='gibdd') as bd:
             with cursors.Cursor(bd) as cursor:
 
-                sql = ('SELECT `Код_звания`, `Наименование`, FROM `звания`')
+                sql = ('SELECT `Код звания`, `Наименование`, FROM `звания`')
                 cursor.execute(sql)
                 g = cursor.fetchall()
                 print(g)
                 self.info_2.setText(str(g))
 
     def zapros_3(self):
-        with connections.Connection(user='root',host='localhost',database='gibdd') as bd:
+        with connections.Connection(user='root',password='root',host='localhost',database='gibdd') as bd:
             with cursors.Cursor(bd) as cursor:
 
-                sql = ('SELECT `Код_автомобиля`,`Код_водителя`, FROM `автомобили`')
+                sql = ('SELECT `Код автомобиля`,`Код водителя`, FROM `автомобили`')
                 cursor.execute(sql)
                 g = cursor.fetchall()
                 print(g)
                 self.info_3.setText(str(g))
 
     def zapros_4(self):
-        with connections.Connection(user='root',host='localhost',database='kurs') as bd:
+        with connections.Connection(user='root',password='root',host='localhost',database='gibdd') as bd:
             with cursors.Cursor(bd) as cursor:
 
-                sql = ('SELECT `Технический_осмотр`, FROM `customers`')
+                sql = ('SELECT `Технический осмотр`, FROM `customers`')
                 cursor.execute(sql)
                 g = cursor.fetchall()
                 print(g)
                 self.info_4.setText(str(g))
 
     def zapros_5(self):
-        with connections.Connection(user='root',host='localhost',database='kurs') as bd:
+        with connections.Connection(user='root',password='root',host='localhost',database='gibdd') as bd:
             with cursors.Cursor(bd) as cursor:
 
-                sql = ('SELECT `Отметка_о_нахождении` FROM `автомобили в угоне`')
+                sql = ('SELECT `Отметка о нахождении` FROM `автомобили в угоне`')
                 cursor.execute(sql)
                 g = cursor.fetchall()
                 print(g)
